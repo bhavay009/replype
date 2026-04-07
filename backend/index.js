@@ -11,6 +11,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use('/api/auth', require('./routes/authRoutes'));
+
 // Health Check
 app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', message: 'ReplyPe API is running' });
